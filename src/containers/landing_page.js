@@ -33,14 +33,14 @@ class LandingPage extends Component {
         <h1 className="col-xs-12 text-xs-center heading">Austin Digital Jobs</h1>
         <h2 className="text-xs-center">Ice-Breaker</h2>
         <button
-            className="btn btn-primary"
+            className="sign-in-button"
             onClick={this.onSignInClick}
                 >
                     Sign In
         </button>
 
         <button
-            className="btn btn-primary"
+            className="sign-up-button"
             onClick={this.onSignUpClick}
                 >
                     Sign Up

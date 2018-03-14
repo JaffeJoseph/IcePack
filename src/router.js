@@ -7,16 +7,16 @@ import HomePage from './containers/home';
 
 
 const Routes = () => {
-    return (
-        <BrowserRouter>
-            <div>
-                <Switch>
-                    <Route path="/home" component={HomePage} />                    
-                    <Route path="/" component={LandingPage} />
-                </Switch>
-            </div>
-        </BrowserRouter>
-    )
-}
+  return (
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/home" component={HomePage} />                    
+          <Route path="/" component={LandingPage} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  );
+};
 
 export default Routes;

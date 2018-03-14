@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { expect } from 'chai';
-import { describe, beforeEach, it } from '@bigtest/mocha';
+import { describe, beforeEach, it, afterEach } from '@bigtest/mocha';
 import { describeApplication } from '../helpers';
 
 
@@ -22,7 +22,22 @@ describe('LandingPage', () => {
     // mount our app
     this.app = render(<AppRoot test/>, rootElement);
   });
+  afterEach(() => {
+    unmountComponentAtNode(rootElement);
+    document.body.removeChild(rootElement);
+    rootElement = null;
+  });
+
   it('has a "Austin Digital Jobs" heading', () => {
     expect(landingPage.heading).to.eq('Austin Digital Jobs');
+  });
+
+  describe('Click Sign In', () => {
+    beforeEach(() => {
+      return landingPage.signInButton();
+    });
+    it('should render the sign in component', () => {
+      expect(landingPage.signIn).to.exist;
+    });
   });
 });
