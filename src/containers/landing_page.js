@@ -30,7 +30,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="container landing-page">
-        <h1 className="col-xs-12 text-xs-center data-">Austin Digital Jobs</h1>
+        <h1 className="col-xs-12 text-xs-center heading">Austin Digital Jobs</h1>
         <h2 className="text-xs-center">Ice-Breaker</h2>
         <button
             className="btn btn-primary"

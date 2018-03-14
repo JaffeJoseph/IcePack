@@ -7,7 +7,7 @@ import {
 } from '@bigtest/interaction';
 
 @page class LandingPage {
-  heading = text('[data-test-find-landing-page-heading]');
+  heading = text('h1.heading');
 }
 
-export default new LandingPage('[data-test-landing-page]');
+export default LandingPage;

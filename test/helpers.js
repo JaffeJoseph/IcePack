@@ -7,7 +7,6 @@ import chaiAsPromised from 'chai-as-promised';
 import { describe, beforeEach, afterEach } from '@bigtest/mocha';
 import Convergence from '@bigtest/convergence';
 
-import WebSocket from './mock-websocket';
 import AppRoot from '../src/root';
 
 // use chai dom matchers
@@ -60,18 +59,18 @@ export function describeApplication(name, setup, only) {
       this.app = render(<AppRoot test/>, rootElement);
 
       // useful things to assert against
-      this.state = this.app.store.getState();
-      this.location = this.state.router.location;
+      // this.state = this.app.store.getState();
+      // this.location = this.state.router.location;
 
       // keep local contexts up to date with the app
-      unsubscribeFromStore = this.app.store.subscribe(() => {
-        this.state = this.app.store.getState();
-        this.location = this.state.router.location;
-      });
+      // unsubscribeFromStore = this.app.store.subscribe(() => {
+      //   this.state = this.app.store.getState();
+      //   this.location = this.state.router.location;
+      // });
 
       // helpers specific to this context
-      this.visit = visit.bind(this, this.app.history.push);
-      this.goBack = goBack.bind(this, this.app.history.goBack);
+      // this.visit = visit.bind(this, this.app.history.push);
+      // this.goBack = goBack.bind(this, this.app.history.goBack);
 
       // wait until our app has finished loading
       return new Convergence().once(() => {
@@ -81,8 +80,8 @@ export function describeApplication(name, setup, only) {
 
     // teardown
     afterEach(function() {
-      unsubscribeFromStore();
-      unsubscribeFromStore = null;
+      // unsubscribeFromStore();
+      // unsubscribeFromStore = null;
 
       unmountComponentAtNode(rootElement);
       document.body.removeChild(rootElement);
@@ -93,7 +92,7 @@ export function describeApplication(name, setup, only) {
       this.pauseTest = null;
       this.location = null;
       this.state = null;
-      this.app = null;
+      // this.app = null;
     });
 
     // passthrough to our tests
