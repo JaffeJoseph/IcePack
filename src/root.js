@@ -12,24 +12,24 @@ import reducers from './reducers';
 
 export default function AppRoot() {
 
-  const getInitialState = (history) => ({
-    router: {
-      location: {
-        pathname: history.location.pathname,
-        state: history.location.state || {}
-      }
-    }
-  });
+  // const getInitialState = (history) => ({
+  //   router: {
+  //     location: {
+  //       pathname: history.location.pathname,
+  //       state: history.location.state || {}
+  //     }
+  //   }
+  // });
 
 
-  history = !this.props.test ?
-    createBrowserHistory() :
-    createMemoryHistory();
+  // history = !this.props.test ?
+  //   createBrowserHistory() :
+  //   createMemoryHistory();
 
-  store = createStore({
-    socket: this.socket,
-    history: this.history
-  });
+  // store = createStore({
+  //   socket: this.socket,
+  //   history: this.history
+  // });
 
   return (
     <Provider store={createStore(reducers)}>
