@@ -16,7 +16,7 @@ function renderField(field) {
             {...field.input}
                 />
       </label>
-      {field.label}
+     
 
       <div className="text-help">
         {touched ? error : ''}
@@ -49,8 +49,8 @@ class SignIn extends Component {
             name="password"
             component={this.renderField}
                 />
-        <Link href="/home" to="/home" className="btn btn-primary x">SignIn</Link>
-        <Link href="/" to="/" className="btn btn-danger">Cancel</Link>
+        <Link href="/home" to="/home" className="btn btn-primary sign-in-submit">SignIn</Link>
+        <Link href="/" to="/" className="btn btn-danger sign-in-cancel">Cancel</Link>
       </form>
     );
   }
